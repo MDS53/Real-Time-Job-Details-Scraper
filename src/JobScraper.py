@@ -43,9 +43,9 @@ def page1():
             st.success("Loading completed!")
             st.snow()
             st.balloons()
-    if st.button("Explore Statistical Insights"):
+         if st.button("Explore Statistical Insights"):
         # Setting a session state variable to indicate the page change
-        st.session_state.page_number = 2
+             st.session_state.page_number = 2
     
 
 def page2():

@@ -20,7 +20,7 @@ def page1():
     else:
         st.success(f"User entered: {ab}") 
         if os.path.isfile(filename):
-            with st.spinner("Loading..."):
+            with st.spinner("Kindly wait, the content is on its way!..."):
                 print(f"The file {filename} is present in the current directory.")
                 #global df
                 df=pd.read_csv(f"{ab} {formatted_date}.csv")

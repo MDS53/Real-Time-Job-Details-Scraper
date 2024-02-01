@@ -47,3 +47,8 @@ The Real-time Job Details Scraper is a dynamic tool designed to fetch and analyz
   
 
 Feel free to reach out for any questions or feedback! Happy scraping! 🚀
+
+Demo 👇👇
+
+https://github.com/MDS53/Real-Time-Job-Details-Scraper/assets/82602774/2b673a58-8238-4c76-9b28-b7dde9520e96
+

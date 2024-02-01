@@ -33,7 +33,7 @@ def page1():
             st.balloons()
         else:
             print(f"The file {filename} is not present in the current directory.")
-            with st.spinner("Loading..."):
+            with st.spinner("Kindly wait, the content is on its way!..."):
                 C=w.Webscraping(ab)
                 df=pd.read_csv(f"{ab} {formatted_date}.csv")
                 df.drop(df.columns[0],axis=1,inplace=True)

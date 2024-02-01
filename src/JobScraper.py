@@ -16,7 +16,7 @@ def page1():
    
     if not ab:
         st.error("Please enter some text.")
-    # Continue with the rest of your app logic
+    
     else:
         st.success(f"User entered: {ab}") 
         if os.path.isfile(filename):
@@ -44,7 +44,7 @@ def page1():
             st.snow()
             st.balloons()
     if st.button("Explore Statistical Insights"):
-        # Set a session state variable to indicate the page change
+        # Setting a session state variable to indicate the page change
         st.session_state.page_number = 2
     
 
@@ -64,7 +64,7 @@ def page2():
     st.write("Note : Piecharts are made on Top30 records from grouped data ")
     st.header("")
     if st.button("Go to Previous Page"):
-        # Set a session state variable to indicate the page change
+        # Setting a session state variable to indicate the page change
         st.session_state.page_number = 1#This will through you to page1
 
 

@@ -5,10 +5,12 @@ import plotly.express as px
 import logging
 import streamlit as st
 
+#This class is used as a package in webscraping.py file 
 class Data_Analysis:
     logging.basicConfig(filename="JobScraper_Log_file.log",level=logging.DEBUG,format='%(asctime)s %(levelname)s %(message)s')
-    #This class is used as a package in webscraping.py file 
-    def __init__(self,df):# Df will be replaced with role in the future.
+    
+    def __init__(self,df):
+        """This function takes dataframe from webscraping.py file and returns Statistical insights"""
         logging.info('Data_Analysis class entered successfully')
         try:
             logging.info('_init_() entered successfully')
@@ -19,7 +21,7 @@ class Data_Analysis:
             self.df_1=self.df.groupby(['Role'])['Company_Name'].value_counts().sort_values(ascending=False).reset_index()# Roles in company and its count
             self.df_1.rename(columns={'count': 'Vacancies'}, inplace=True)
             self.fig = ff.create_table(self.df_1[:30], height_constant=20)
-            self.fig.update_layout(width=2000)  # Adjust the width value as needed
+            self.fig.update_layout(width=2000)  
             st.subheader('Roles in company and Vacancies')
             st.dataframe(self.df_1)
             st.subheader('')
@@ -32,7 +34,6 @@ class Data_Analysis:
             
             st.subheader('Vacancies at Company with respect to Location')
             self.df_1=self.df.groupby(['Company_Name'])['Location'].value_counts().sort_values(ascending=False).reset_index()#count of openings at Company with respect to Location
-              # Adjust the width value as needed
             self.df_1.rename(columns={'count': 'Vacancies'}, inplace=True)
             st.dataframe(self.df_1)
             st.subheader('')
@@ -46,21 +47,21 @@ class Data_Analysis:
             st.subheader('Vacancies at Company with respect to Location,Role')
             self.df_1=self.df.groupby(['Company_Name'])[['Location','Role']].value_counts().sort_values(ascending=False).reset_index()#which role in which company and in which branch has more vacancies 
             self.df_1.rename(columns={'count': 'Vacancies'}, inplace=True)
-            st.dataframe(self.df_1)  # Adjust the width value as needed
+            st.dataframe(self.df_1) 
             st.subheader('')
             st.subheader('')
             
             st.subheader('Vacancies at Company with respect to Location,Role,Experience')
             self.df_1=self.df.groupby(['Company_Name'])[['Location','Role','Experience']].value_counts().sort_values(ascending=False).reset_index()#which role in which company and in which branch has more vacancies with experience
             self.df_1.rename(columns={'count': 'Vacancies'}, inplace=True)
-            st.dataframe(self.df_1)  # Adjust the width value as needed
+            st.dataframe(self.df_1) 
             st.subheader('')
             st.subheader('')
             
             st.subheader('Vacancies at Company with respect to Role,Experience')
             self.df_1=self.df.groupby(['Company_Name'])[['Role','Experience']].value_counts().sort_values(ascending=False).reset_index()#which role in which company and in which branch has more vacancies 
             self.df_1.rename(columns={'count': 'Vacancies'}, inplace=True)
-            st.dataframe(self.df_1)  # Adjust the width value as needed
+            st.dataframe(self.df_1)
             st.subheader('')
             st.subheader('')
             
@@ -79,7 +80,6 @@ class Data_Analysis:
             
             st.subheader('Vacancies at Company with respect to Role,Experience,Location')
             self.df_1=self.df.groupby(['Experience'])[['Location','Role','Company_Name','Rating']].value_counts().sort_values(ascending=False).reset_index()#which city has more vacancies with respect to experience
-          # Adjust the width value as needed
             self.df_1.rename(columns={'count': 'Vacancies'}, inplace=True)
             st.dataframe(self.df_1)
             st.subheader('')
@@ -93,7 +93,7 @@ class Data_Analysis:
             st.subheader('Vacancies with respect to Role,Experience')
             self.df_1=self.df.groupby(['Experience'])[['Role']].value_counts().sort_values(ascending=False).reset_index()#which role has more vacancies for freshers, Less experienced, and more experienced
             self.df_1.rename(columns={'count': 'Vacancies'}, inplace=True)
-            st.dataframe(self.df_1)  # Adjust the width value as needed
+            st.dataframe(self.df_1)  
             st.subheader('')
             st.subheader('')
             

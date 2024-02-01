@@ -52,3 +52,4 @@ Demo 👇👇
 
 https://github.com/MDS53/Real-Time-Job-Details-Scraper/assets/82602774/2b673a58-8238-4c76-9b28-b7dde9520e96
 
+Note : Loading time will take a bit longer for some roles to scrap large number of records, but it will definitely returns the result as you expect

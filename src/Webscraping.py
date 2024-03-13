@@ -45,7 +45,7 @@ class Webscraping:
                 self.columns=["Role","Company_Name","Rating","Reviews","Experience","Location","Skill","Posted","Posted_on","Job_link","Company_info"]
                 self.df= pd.DataFrame(columns=self.columns)
                 self.Rol=Role
-                for self.i in range(1,2000):
+                for self.i in range(1,1000):
                     try:
                         self.Html_data=self.get_response(self.Rol,self.i)
                         self.big_box=self.Html_data.find_all('div',id='jobsList')[0]
